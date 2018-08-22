@@ -1,0 +1,76 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "name": "aifenxiang.mail",
+      "type": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "name": "aifenxiang.mail.clazz",
+      "type": "java.lang.Class"
+    },
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "defaultValue": "UTF-8",
+      "name": "aifenxiang.mail.default-encoding",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "defaultValue": true,
+      "name": "aifenxiang.mail.fallback",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "name": "aifenxiang.mail.host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "name": "aifenxiang.mail.local-template-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "name": "aifenxiang.mail.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "name": "aifenxiang.mail.port",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "name": "aifenxiang.mail.protocol",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "name": "aifenxiang.mail.sender-mail",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "defaultValue": true,
+      "name": "aifenxiang.mail.smtp-auth",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "defaultValue": false,
+      "name": "aifenxiang.mail.smtp-ssl-enable",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.aifenxiang.pigeon.autoconfigartion.AiFenXIangMailProperties",
+      "name": "aifenxiang.mail.username",
+      "type": "java.lang.String"
+    }
+  ]
+}

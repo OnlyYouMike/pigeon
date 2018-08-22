@@ -1,0 +1,9 @@
+/Users/zj/aifenxiang/pigeon/src/main/java/com/suidifu/pigeon/service/AiFenXiangMailService.java
+/Users/zj/aifenxiang/pigeon/src/main/java/com/suidifu/pigeon/config/AiFenXIangMailProperties.java
+/Users/zj/aifenxiang/pigeon/src/main/java/com/suidifu/pigeon/service/EmailSendService.java
+/Users/zj/aifenxiang/pigeon/src/main/java/com/suidifu/pigeon/config/AIFenXiangServiceAutoConfigartion.java
+/Users/zj/aifenxiang/pigeon/src/main/java/com/suidifu/pigeon/service/impl/EmailSendServiceImpl.java
+/Users/zj/aifenxiang/pigeon/src/main/java/com/suidifu/pigeon/service/TemplateService.java
+/Users/zj/aifenxiang/pigeon/src/main/java/com/suidifu/pigeon/config/dto/Pair.java
+/Users/zj/aifenxiang/pigeon/src/main/java/com/suidifu/pigeon/server/EmailProtocol.java
+/Users/zj/aifenxiang/pigeon/src/main/java/com/suidifu/pigeon/server/EmailApplication.java

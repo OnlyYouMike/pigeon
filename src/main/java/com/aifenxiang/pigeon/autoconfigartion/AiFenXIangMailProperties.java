@@ -19,32 +19,13 @@ public class AiFenXIangMailProperties {
 
     private String localTemplatePath;
 
-    private String username;
-
-    private String password;
-
-    private String protocol;
-
-    private String port;
-
-    private String host;
-
-    private String defaultEncoding = "UTF-8";
-
-    private boolean smtpAuth = true;
-
-    private boolean smtpSslEnable = false;
-
-    private Class clazz = SSLSocketFactory.class;
-
-    private boolean fallback = true;
-
-
     public void verifyParams(){
         if (StringUtils.isBlank(this.senderMail)){
-            throw new AiMailException("PleaseConfigureTheSenderEmailAccount");
+            throw new AiMailException("Please configure the sender's mailbox");
         }
-
+        if (StringUtils.isBlank(this.localTemplatePath)){
+            this.localTemplatePath = "mail/verifyCode";
+        }
     }
 
 

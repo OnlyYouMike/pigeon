@@ -11,7 +11,6 @@ import org.apache.commons.lang.exception.ExceptionUtils;
 import java.util.concurrent.BlockingQueue;
 
 import static com.aifenxiang.pigeon.concurrent.SendMailUtil.TIME_OUT;
-import static com.aifenxiang.pigeon.concurrent.SendMailUtil.isRuning;
 
 /**
  * @author: zj
@@ -22,36 +21,13 @@ import static com.aifenxiang.pigeon.concurrent.SendMailUtil.isRuning;
 @Log4j2
 public class FlyingBird implements Runnable {
 
-
     private BlockingQueue<EmailApplication> queue;
-
     @Override
-    public  void run() {
-        long timestamp = System.currentTimeMillis();
-        while (isRuning){
-            long timeOut  = timestamp+TIME_OUT;
-            if (System.currentTimeMillis()>timeOut){
-                break;
-            }
-            try {
-                if (queue.size()==0){
-                    Thread.sleep(2000);
-                    if (queue.size() == 0){
-                        isRuning = false;
-                        log.warn("End of the mailing process");
-                        break;
-                    }
-                    continue;
-                }
-                timestamp = System.currentTimeMillis();
-                EmailApplication emailApplication = queue.poll();
-                EmailSendService emailSendService = emailApplication.getEmailSendService();
-                emailSendService.sendMessage(emailApplication);
-                Thread.sleep(1000);
-            }catch (Exception e){
-                log.error("Mail sending error:"+ExceptionUtils.getFullStackTrace(e));
-            }
-
+    public void run() {
+        EmailApplication poll = queue.poll();
+        if (poll != null){
+            EmailSendService emailSendService = poll.getEmailSendService();
+            emailSendService.sendMessage(poll);
         }
     }
 }

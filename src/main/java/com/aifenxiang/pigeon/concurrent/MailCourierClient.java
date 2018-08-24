@@ -20,12 +20,11 @@ import java.util.concurrent.TimeUnit;
 @Data
 public class MailCourierClient {
 
-    private volatile static BlockingQueue<EmailApplication> queue = new ArrayBlockingQueue<EmailApplication>(1000);
-
-    @Value("${email.send.num}")
-    private int threadNum;
+    public volatile static BlockingQueue<EmailApplication> queue = new ArrayBlockingQueue<EmailApplication>(1000);
 
     public static long TIME_OUT = 3*60*1000;
+
+    private final int threadNum = 5;
 
     public boolean send(EmailApplication emailApplication){
         if ( null == emailApplication){
@@ -43,11 +42,11 @@ public class MailCourierClient {
         return rsp;
     }
 
+
     @Scheduled(fixedDelay = 2000)
-    public void executeSend(){
-        for (int i=1;i<=threadNum;i++){
-            ThreadFactory.init(threadNum).execute(new FlyingBird(queue));
+    public void scanner() {
+        for (int i = 0;i<threadNum;i++){
+            ThreadFactory.init(threadNum).execute(new FlyingBird());
         }
     }
-
 }

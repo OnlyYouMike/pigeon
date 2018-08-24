@@ -2,6 +2,8 @@ package com.aifenxiang.pigeon.server;
 
 import com.aifenxiang.pigeon.config.dto.Pair;
 import com.aifenxiang.pigeon.exception.AiMailException;
+import com.aifenxiang.pigeon.service.EmailSendService;
+import com.aifenxiang.pigeon.service.TemplateService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,6 +33,10 @@ public class EmailApplication {
     private List<Pair<String,File>> attachment;
 
     private Map<String,Object> contextTemplate;
+
+    private TemplateService templateService;
+
+    private EmailSendService emailSendService;
 
 
     public void verify(){

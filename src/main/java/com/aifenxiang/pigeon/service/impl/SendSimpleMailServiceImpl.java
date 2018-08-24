@@ -48,7 +48,7 @@ public class SendSimpleMailServiceImpl  implements EmailSendService {
 
     private void sendSimpleMessage(EmailApplication emailApplication) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom(aiFenXiangMailService.getAiFenXIangMailProperties().getSenderMail());
+        message.setFrom(aiFenXiangMailService.getSenderMail());
         message.setTo(emailApplication.getRecipientMail());
         message.setSubject(emailApplication.getTitle());
         message.setText(emailApplication.getContext());

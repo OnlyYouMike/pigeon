@@ -30,10 +30,8 @@ import java.io.File;
 @NoArgsConstructor
 public class SendAttachmentMailServiceImpl implements EmailSendService {
 
-
     @Autowired
     private AiFenXiangMailService aiFenXiangMailService;
-
     @Autowired
     private JavaMailSender javaMailSender;
 
@@ -55,7 +53,7 @@ public class SendAttachmentMailServiceImpl implements EmailSendService {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         try {
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
-            mimeMessageHelper.setFrom(aiFenXiangMailService.getAiFenXIangMailProperties().getSenderMail());
+            mimeMessageHelper.setFrom(aiFenXiangMailService.getSenderMail());
             mimeMessageHelper.setTo(emailApplication.getRecipientMail());
             mimeMessageHelper.setSubject(emailApplication.getTitle());
             mimeMessageHelper.setText(emailApplication.getContext());

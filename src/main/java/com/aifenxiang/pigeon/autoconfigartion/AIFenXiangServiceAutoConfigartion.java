@@ -15,7 +15,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties(AiFenXIangMailProperties.class)
 @ConditionalOnClass(AiFenXiangMailService.class)
-@ConditionalOnProperty(prefix = "aifenxiang.mail",value = "enabled",matchIfMissing = true)
 public class AIFenXiangServiceAutoConfigartion {
 
     @Autowired
@@ -23,6 +22,7 @@ public class AIFenXiangServiceAutoConfigartion {
 
     @Bean
     @ConditionalOnMissingBean(AiFenXiangMailService.class)
+    @ConditionalOnProperty(prefix = "aifenxiang.mail",value = "enabled",matchIfMissing = true)
     public AiFenXiangMailService aiFenXiangMailService(){
         AiFenXiangMailService aiFenXiangMailService = new AiFenXiangMailService(aiFenXIangMailProperties);
         return aiFenXiangMailService;

@@ -19,14 +19,5 @@ public class AiFenXIangMailProperties {
 
     private String localTemplatePath;
 
-    public void verifyParams(){
-        if (StringUtils.isBlank(this.senderMail)){
-            throw new AiMailException("Please configure the sender's mailbox");
-        }
-        if (StringUtils.isBlank(this.localTemplatePath)){
-            this.localTemplatePath = "mail/verifyCode";
-        }
-    }
-
 
 }

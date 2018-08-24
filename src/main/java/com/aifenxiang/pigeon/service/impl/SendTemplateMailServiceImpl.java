@@ -32,8 +32,6 @@ public class SendTemplateMailServiceImpl  implements EmailSendService {
     private JavaMailSender javaMailSender;
     @Autowired
     private AiFenXiangMailService aiFenXiangMailService;
-    @Autowired
-    private TemplateService templateService;
 
     @Override
     public void sendMessage(EmailApplication emailApplication) {
@@ -55,10 +53,10 @@ public class SendTemplateMailServiceImpl  implements EmailSendService {
         try {
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
-            mimeMessageHelper.setFrom(aiFenXiangMailService.getAiFenXIangMailProperties().getSenderMail());
+            mimeMessageHelper.setFrom(aiFenXiangMailService.getSenderMail());
             mimeMessageHelper.setTo(emailApplication.getRecipientMail());
             mimeMessageHelper.setSubject(emailApplication.getTitle());
-            String context = templateService.render(aiFenXiangMailService.getAiFenXIangMailProperties().getLocalTemplatePath(), emailApplication.getContextTemplate());
+            String context = emailApplication.getTemplateService().render(aiFenXiangMailService.getLocalTemplatePath(), emailApplication.getContextTemplate());
             mimeMessageHelper.setText(context);
             javaMailSender.send(mimeMessage);
             log.info("The template email is sent successfully, the recipient email:{"+emailApplication.getRecipientMail()+"},title:{"+emailApplication.getTitle()+"}");

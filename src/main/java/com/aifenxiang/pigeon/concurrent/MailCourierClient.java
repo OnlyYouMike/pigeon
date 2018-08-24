@@ -18,18 +18,14 @@ import java.util.concurrent.TimeUnit;
  **/
 @Component
 @Data
-public class SendMailUtil {
-
+public class MailCourierClient {
 
     private volatile static BlockingQueue<EmailApplication> queue = new ArrayBlockingQueue<EmailApplication>(1000);
-
 
     @Value("${email.send.num}")
     private int threadNum;
 
-
     public static long TIME_OUT = 3*60*1000;
-
 
     public boolean send(EmailApplication emailApplication){
         if ( null == emailApplication){
@@ -42,7 +38,7 @@ public class SendMailUtil {
                 throw new AiMailException("The server is busy, please resend it later");
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new AiMailException("system error");
         }
         return rsp;
     }

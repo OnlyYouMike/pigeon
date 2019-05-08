@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -22,7 +23,7 @@ import javax.mail.internet.MimeMessage;
  * @author: zj
  * @create: 2018-08-23 17:53
  **/
-@Log4j2
+@Slf4j
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

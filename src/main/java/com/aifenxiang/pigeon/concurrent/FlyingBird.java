@@ -4,6 +4,7 @@ import com.aifenxiang.pigeon.server.EmailApplication;
 import com.aifenxiang.pigeon.service.EmailSendService;
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.exception.ExceptionUtils;
 
 import static com.aifenxiang.pigeon.concurrent.MailCourierClient.queue;
@@ -13,7 +14,7 @@ import static com.aifenxiang.pigeon.concurrent.MailCourierClient.queue;
  * @create: 2018-08-24 14:52
  **/
 @Data
-@Log4j2
+@Slf4j
 public class FlyingBird implements Runnable {
 
     @Override

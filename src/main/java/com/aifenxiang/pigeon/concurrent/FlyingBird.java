@@ -14,7 +14,7 @@ import static com.aifenxiang.pigeon.concurrent.MailCourierClient.queue;
  * @create: 2018-08-24 14:52
  **/
 @Data
-@Slf4j
+@Log4j2
 public class FlyingBird implements Runnable {
 
     @Override

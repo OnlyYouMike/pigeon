@@ -25,7 +25,7 @@ import java.io.File;
  * @author: zj
  * @create: 2018-08-23 17:49
  **/
-@Slf4j
+@Log4j2
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

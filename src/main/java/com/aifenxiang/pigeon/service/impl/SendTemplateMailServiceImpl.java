@@ -23,7 +23,7 @@ import javax.mail.internet.MimeMessage;
  * @author: zj
  * @create: 2018-08-23 17:53
  **/
-@Slf4j
+@Log4j2
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
